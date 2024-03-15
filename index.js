@@ -22,6 +22,9 @@ document.querySelector('#submitWorkout').addEventListener('click', displayWorkou
 // Function to add new fitness goals and remove completed ones
 // NOW LET'S DEBUG TO PREVENT DUPLICATE GOALS FROM BEING SUBMITTED 🚀
 
+/*Added logic which fetches all the lists inside the goal-list(unordered list) and created a loop which iterates through the
+ list items and checks if the contents inside are equal to the input value which if true alerts the user and returns before adding
+  the input value into the list.*/
 const addNewGoal = () => {
     const goalInput = document.querySelector('#goalInput').value;
     const goalList = document.querySelector('#goalList');
@@ -38,6 +41,7 @@ const addNewGoal = () => {
     newGoal.textContent = goalInput;
     goalList.appendChild(newGoal);
     
+    //Event to listen for click to remove the list item from the screen.
     newGoal.addEventListener('click', function(){
         goalList.removeChild(newGoal);
     })
